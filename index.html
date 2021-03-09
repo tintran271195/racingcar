@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body
+    onload="init()
+  "
+  >
+    <form width="100%">
+      <img
+        src="car.jpg"
+        alt="car"
+        id="car"
+        style="width: auto; height: 200px"
+      />
+      <p>control this car</p>
+      <input type="button" value="up" onclick="moveUp()" />
+      <input type="button" value="down" onclick="moveDown()" />
+      <input type="button" value="right" onclick="moveRight()" />
+      <input type="button" value="left" onclick="moveLeft()" />
+    </form>
+  </body>
+  <script src="car.js">
+    var step = 50;
+    var imgCar = null;
+    imgCar = document.getElementById("car");
+    function init() {
+      imgCar = document.getElementById("car");
+      imgCar.style.position = "relative";
+      imgCar.style.left = "0px";
+      imgCar.style.top = "0px";
+    }
+    function moveRight() {
+      imgCar.src = "car-right.jpg";
+      imgCar.style.left = parseInt(imgCar.style.left) + step + "px";
+    }
+    function moveLeft() {
+      imgCar.src = "car.jpg";
+      imgCar.style.left = parseInt(imgCar.style.left) - step + "px";
+    }
+    function moveUp() {
+      imgCar.src = "car-up.jpg";
+      imgCar.style.top = parseInt(imgCar.style.top) - step + "px";
+    }
+    function moveDown() {
+      imgCar.src = "car-down.jpg";
+      imgCar.style.top = parseInt(imgCar.style.top) + step + "px";
+    }
+  </script>
+</html>
